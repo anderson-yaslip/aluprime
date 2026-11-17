@@ -1,0 +1,233 @@
+@use "../../styles/colors.scss" as *;
+
+header {
+  position: relative;
+  z-index: 999;
+
+  .topo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    color: rgb(63, 63, 63);
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    z-index: 3;
+
+    &.fixed {
+      position: fixed;
+      top: 0;
+      transition: all 0.3s ease;
+      animation: scrollNavbar 0.5s normal;
+
+      @keyframes scrollNavbar {
+        from {
+          transform: translateY(-100px);
+        }
+
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      .topo-contato {
+        display: none;
+      }
+    }
+
+    .topo-contato {
+      display: flex;
+      width: 100%;
+      background-color: $color-purple-3;
+      color: white;
+      justify-content: center;
+      padding: 10px 20px;
+      z-index: 2;
+
+      @media (max-width: 725px) {
+        display: none;
+      }
+
+      .base {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        width: 100%;
+
+        @media (max-width: 400px) {
+          gap: 20px;
+        }
+
+        a {
+          font-family: var(--font-poppins);
+          font-size: 15px;
+          display: flex;
+          justify-content: center;
+          gap: 5px;
+          letter-spacing: 1px;
+          transition: all 0.2s ease-in;
+
+          &:hover {
+            color: #cfcfcf;
+          }
+
+          svg {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+
+    .topo-menu {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      padding: 0 0 .3rem 0;
+      z-index: 4;
+      background-color: rgb(250, 250, 250);
+      box-shadow: 0px 5px 20px 2px rgba(30, 64, 80, 0.336);
+      border-bottom: 10px solid #126d82;
+      transition: all 0.4s;
+
+      @media (max-width: 940px) {
+        background-color: #126d82;
+        border-bottom: none;
+        padding: 0;
+      }
+
+      .base {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+
+        @media (max-width: 940px) {
+          margin: .6rem 0;
+          width: 100%;
+        }
+
+        a {
+          margin-left: .2rem;
+
+          img {
+            width: 40%;
+
+            @media (max-width: 940px) {
+              max-width: 90%;
+              width: auto;
+            }
+          }
+        }
+
+        .topo-links {
+          display: flex;
+          list-style: none;
+          align-items: center;
+          justify-content: space-around;
+          font-family: var(--font-poppins);
+
+          @media (max-width: 940px) {
+            display: none;
+          }
+
+          .topo-item {
+            a {
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 18px;
+              padding: 5px 10px;
+              font-weight: 500;
+              color: inherit;
+              overflow: hidden;
+              transition: color 0.3s ease;
+
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgb(166, 122, 21);
+                transform: scaleY(0);
+                transform-origin: top;
+                transition: transform 0.3s ease;
+                z-index: -1;
+              }
+
+              &:hover {
+                color: rgb(255, 223, 151);
+
+                &::before {
+                  transform: scaleY(1);
+                }
+              }
+
+              &.active {
+                color: rgb(255, 223, 151);
+
+                &::before {
+                  transform: scaleY(1);
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+  .menu-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    color: #fff;
+    top: -100vh;
+    height: 100vh;
+    width: 100%;
+    background-color: #126d82;
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+    z-index: 2;
+
+    @media (min-width: 940px) {
+      display: none;
+    }
+
+    .topo-links-mobile {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+      flex-direction: column;
+
+      li {
+        a {
+          font-size: 23px;
+          font-family: var(--font-poppins);
+          font-weight: 600;
+        }
+      }
+    }
+
+    &.open {
+      top: 0;
+    }
+
+    &.open .topo-menu {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 10px 20px;
+      z-index: 2;
+      background-color: #2525253f;
+      box-shadow: 0 5px 20px 2px #00000041;
+    }
+  }
+}

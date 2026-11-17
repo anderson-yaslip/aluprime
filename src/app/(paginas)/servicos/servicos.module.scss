@@ -1,0 +1,142 @@
+.container {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(rgba(234, 234, 234, 0.75), rgba(234, 234, 234, 0.75)), url("/fundo-conteudo.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .containerDicas {
+        width: 80%;
+        height: auto;
+        background-color: #e4e4e4;
+        margin: 7rem auto 0;
+        padding: 2rem;
+        transition: .3s ease-in-out;
+
+        @media screen and (max-width: 940px) {
+            margin: 3rem auto 0;
+            width: 100%;
+        }
+
+        h1,
+        h2 {
+            color: #39aec9;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            padding-bottom: 1.5rem;
+        }
+
+        h2 {
+            padding: 1rem 0;
+        }
+
+        p {
+            letter-spacing: 1px;
+            font-size: .9rem;
+            line-height: 1.4rem;
+        }
+    }
+
+    .containerServicos {
+        height: auto;
+
+        h2 {
+            color: #000;
+            font-weight: 300;
+        }
+
+        .containerLinks {
+            display: flex;
+            align-items: center;
+            transition: .3s ease-in-out;
+
+            @media screen and (max-width: 600px) {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .containerDivs {
+                width: 50%;
+                height: auto;
+                transition: .3s ease-in-out;
+
+                @media screen and (max-width: 600px) {
+                    width: 100%;
+                }
+
+
+                h2,
+                h3,
+                h4,
+                h5 {
+                    color: #000;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                }
+
+                ul {
+                    &:nth-of-type(1) {
+                        margin-bottom: 1rem;
+                    }
+
+                    &:nth-of-type(2) {}
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        gap: .5rem;
+
+                        a {
+                            color: #38adc8;
+                            transition: .3s ease-in-out;
+
+                            &:hover {
+                                color: #126d82;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .containerImage {
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0 0;
+
+        div {
+            position: relative;
+            display: inline-block;
+        }
+
+        a {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: .5rem;
+            text-transform: uppercase;
+            font-size: .9rem;
+            text-align: center;
+            font-weight: 600;
+            background-color: #126d82;
+            color: #fff;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: #ccc;
+            }
+        }
+    }
+
+}

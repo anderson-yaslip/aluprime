@@ -1,0 +1,111 @@
+.container {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(rgba(234, 234, 234, 0.75), rgba(234, 234, 234, 0.75)), url("/fundo-conteudo.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .containerDicas {
+        width: 80%;
+        height: auto;
+        background-color: #e4e4e4;
+        margin: 0 auto;
+        transition: .3s ease-in-out;
+
+        @media screen and (max-width: 940px) {
+            width: 100%;
+        }
+
+        .titulo {
+            padding: 2rem;
+            margin: 6rem 0 0;
+
+            @media (max-width: 940px) {
+                margin: 4rem 0 0;
+                padding: 1rem;
+            }
+
+            h1 {
+                margin: 2rem 0;
+                transition: .3s ease-in-out;
+
+                @media (max-width: 940px) {
+                    font-size: 1.2rem;
+                }
+            }
+
+            h1,
+            h2,
+            h3 {
+                text-transform: uppercase;
+                font-weight: 900;
+            }
+
+            h1,
+            h2 {
+                color: #3fb0ca;
+            }
+
+            h2 {
+                margin-bottom: 1.2rem;
+            }
+
+            h3 {
+                font-size: .9rem;
+                margin-bottom: 1rem;
+                line-height: 1.5rem;
+                margin-top: 1rem;
+            }
+
+            div {
+                display: flex;
+                gap: 1rem;
+
+                p {
+                    width: 80%;
+                    margin-bottom: .4rem;
+                }
+            }
+        }
+
+        .portfolio {
+            width: 90%;
+            margin: 0 auto;
+
+            h2 {
+                padding: 1rem 0;
+                color: #3fb0ca;
+                font-weight: 900;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            div {
+                padding: 0 0 1rem;
+                position: relative;
+                display: inline-block;
+
+                a {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin-bottom: 1rem;
+                    padding: .5rem;
+                    text-transform: uppercase;
+                    font-size: .9rem;
+                    text-align: center;
+                    font-weight: 600;
+                    background-color: #126d82;
+                    width: 100%;
+                    color: #fff;
+                    transition: .3s ease-in-out;
+
+                    &:hover {
+                        color: #ccc;
+                    }
+                }
+            }
+        }
+    }
+}
